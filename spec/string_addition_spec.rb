@@ -31,5 +31,13 @@ RSpec.describe 'StringAddition' do
         expect(StringAddition.add(input)).to eq(6)
       end
     end
+
+    context "when numbers are passed with differnt delimiter" do
+      let(:input) { "//;\n1;2" } 
+
+      it "should return sum of all those numbers" do
+        expect(StringAddition.add(input)).to eq(3)
+      end
+    end
   end
 end

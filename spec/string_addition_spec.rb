@@ -47,5 +47,13 @@ RSpec.describe 'StringAddition' do
         expect { StringAddition.add(input) }.to raise_error("negative numbers not allowed: -2")
       end
     end
+
+    context "when more negative numbers are passed" do
+      let(:input) { "-2,3,-4" }
+
+      it "should throw an exception and return negative numbers" do
+        expect { StringAddition.add(input) }.to raise_error("negative numbers not allowed: -2, -4")
+      end
+    end
   end
 end

@@ -23,5 +23,13 @@ RSpec.describe 'StringAddition' do
         expect(StringAddition.add(input)).to eq(5)
       end
     end
+
+    context "when numbers are passed with new line delimiter" do
+      let(:input) { "1\n2,3" } 
+
+      it "should return sum of all numbers" do
+        expect(StringAddition.add(input)).to eq(6)
+      end
+    end
   end
 end

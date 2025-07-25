@@ -14,4 +14,4 @@ jobs:
         run: gem install bundler
       - run: gem install rspec
       - name: execute specs
-        run: bundle exec rspec specs
+        run: rspec specs

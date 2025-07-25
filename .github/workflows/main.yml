@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup checkout
+        uses: action/checkout@v1 
+      - name: install ruby
+        uses: action/setup-ruby@v1
+        with:
+          ruby-verion: 3.2.0
+      - name: install dependecies
+        run: gem install bundler
+      - run: gem install rspec
+      - name: execute specs
+        run: bundle exec rspec specs
